@@ -1,0 +1,26 @@
+pascals-triangle
+link:https://leetcode.com/problems/pascals-triangle/description/
+soln
+class Solution {
+public:
+    vector<int>generateRows(int row){
+        long long ans=1;
+        vector<int>ansv;
+        ansv.push_back(1);
+        for(int j=1;j<row;j++){   
+            ans=ans*(row-j);
+            ans=ans/j;
+            ansv.push_back(ans);
+        }
+        return ansv;
+    }
+    vector<vector<int>> generate(int numRows) {
+        
+        vector<vector<int>>v;
+         for(int i=1;i<=numRows;i++){
+            v.push_back(generateRows(i));
+         } 
+        return v;
+        
+    }
+};
